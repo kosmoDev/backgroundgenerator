@@ -8,17 +8,30 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body id="gradient">
-    <h1>Background Generator</h1>
-    <section id="colors-container">
-      <div class="label-input">
-        <label for="inpt-color1">Corlor 1</label>
-        <input type="color" id="inpt-color1" name="inpt-color1" value="#ff0000" />
-      </div>
-      <input type="color" id="inpt-color2" name="inpt-color2" value="#ffff00" />
-      <button id="random-color"></button>
-    </section>
-    <h2>Current CSS Background</h2>
-    <h3>background: linear-gradient(to right, rgb(255, 0, 0), rgb(255, 255, 0));</h3>
+    <header>
+      <h1>Background Generator</h1>
+    </header>
+    <main>
+      <section id="colors-container">
+        <div class="label-input">
+          <input type="color" id="inpt-color1" name="inpt-color1" value="#ff0000" />
+          <label for="inpt-color1">Start</label>
+        </div>
+        <p id="switch">s</p>
+        <div class="label-input">
+          <input type="color" id="inpt-color2" name="inpt-color2" value="#ffff00" />
+          <label for="inpt-color2">end</label>
+        </div>
+        <p></p>
+        <div class="label-input">
+          <button id="random-color"></button>
+          <label for="inpt-color2">random</label>
+        </div>
+      </section>
+      <h2>Current CSS Background</h2>
+      <h3>background: linear-gradient(to right, rgb(255, 0, 0), rgb(255, 255, 0));</h3>
+    </main>
+    <footer>mde by kosmoDev @2021</footer>
     <script src="script.js"></script>
   </body>
 </html>
