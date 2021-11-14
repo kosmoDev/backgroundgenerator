@@ -1,25 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  position: relative;
+  height: 89vh;
   font-family: "Raleway", sans-serif;
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5em;
-  top: 15%;
   background: linear-gradient(to right, red, yellow);
 }
 
 main {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: grid;
-  grid-template-rows: 3fr 0.1fr 3fr 1fr;
+  grid-template-rows: 2fr 0.1fr 0.1fr 1fr;
   align-items: center;
 }
 
 h1 {
-  font: 600 3.5em "Raleway", sans-serif;
+  font: 500 3.5em "Raleway", sans-serif;
   font-size: 3rem;
   color: rgba(0, 0, 0, 0.6);
   text-align: center;
@@ -48,7 +52,7 @@ h3 {
 }
 
 #colors-container {
-  width: 33%;
+  width: 50%;
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
@@ -58,16 +62,17 @@ input {
   width: 10rem;
   height: 10rem;
   border-color: transparent;
-  border-radius: 1em;
+  border-radius: 0.3rem;
   cursor: pointer;
+  outline: none;
 }
 
 #random-color {
   width: 10rem;
   height: 10rem;
   outline: none;
-  border: 0.5em solid white;
-  border-radius: 1em;
+  border: 0.3em solid white;
+  border-radius: 0.3rem;
   cursor: pointer;
 }
 
@@ -81,19 +86,36 @@ input {
   letter-spacing: 0.3em;
 }
 
+header {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.15rem solid white;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
 footer {
-  width: 100vw;
+  display: flex;
   position: fixed;
+  width: 100%;
   bottom: 0;
   margin: 0 auto;
+  font-weight: 900;
+  background-color: rgba(255, 255, 255, 0.3);
+  height: 5rem;
+  align-items: center;
+  justify-content: center;
+  border-top: 0.15rem solid rgb(255, 255, 255);
 }
 
 #switch {
-  margin: 0;
-  width: auto;
-  justify-self: center;
   align-self: center;
-  padding: 1rem;
-  background-color: gray;
+  padding: 0.5rem;
+  height: 2.5em;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 0.1rem solid white;
   border-radius: 50%;
+  outline: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.6);
 }
