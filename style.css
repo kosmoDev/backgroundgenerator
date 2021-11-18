@@ -5,7 +5,6 @@
 }
 
 body {
-  height: 89vh;
   font-family: "Raleway", sans-serif;
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
@@ -15,26 +14,17 @@ body {
 }
 
 main {
-  height: 100%;
+  margin-top: 20rem;
+  height: 79vh;
   width: 100%;
   display: grid;
-  grid-template-rows: 2fr 0.1fr 0.1fr 1fr;
-  align-items: center;
+  grid-template-rows: 1fr 0.1fr 1fr 0.2fr 5fr;
+  align-items: flex-end;
 }
 
 h1 {
   font: 500 3.5em "Raleway", sans-serif;
   font-size: 3rem;
-  color: rgba(0, 0, 0, 0.6);
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.5em;
-  width: 100%;
-}
-
-h2 {
-  font: 600 3.5em "Raleway", sans-serif;
-  font-size: 1.8rem;
   color: rgba(0, 0, 0, 0.6);
   text-align: center;
   text-transform: uppercase;
@@ -107,15 +97,28 @@ footer {
   border-top: 0.15rem solid rgb(255, 255, 255);
 }
 
-#switch {
-  align-self: center;
+sub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+#to-top {
+  transform: rotateZ(180deg);
+}
+
+.switch {
+  margin: 0 2rem;
+  text-align: center;
   padding: 0.5rem;
-  height: 2.5em;
+  height: 2em;
+  width: 2em;
   background-color: rgba(255, 255, 255, 0.2);
   border: 0.1rem solid white;
   border-radius: 50%;
   outline: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
   color: rgba(0, 0, 0, 0.6);
 }

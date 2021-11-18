@@ -3,22 +3,26 @@ const inptColor1 = document.getElementById("inpt-color1");
 const inptColor2 = document.getElementById("inpt-color2");
 const body = document.getElementById("gradient");
 const btnRandomColor = document.getElementById("random-color");
+const btnToRight = document.getElementById("btn-to-right");
+const btnToLeft = document.getElementById("btn-to-left");
+const btnToTop = document.getElementById("btn-to-top");
+const btnToDown = document.getElementById("btn-to-down");
 
 randomNumber = () => {
   const randValue = Math.floor(Math.random() * 256);
   return randValue;
 };
 
-setGradient = () => {
+setGradient = (side = "right") => {
   body.style.background = `
-    linear-gradient(to right, ${inptColor1.value}, ${inptColor2.value})
+    linear-gradient(to ${side}, ${inptColor1.value}, ${inptColor2.value})
   `;
   actualGradient.textContent = `${body.style.background};`;
 };
 
-setElementBackground = (element) => {
+setElementBackground = (element, side = "right") => {
   element.style.background = `
-    linear-gradient(to right, 
+    linear-gradient(to ${side}, 
     rgb(${randomNumber()},
     ${randomNumber()},
     ${randomNumber()}),
@@ -48,13 +52,13 @@ rgbToHex = (element) => {
   }
 };
 
-getRgbColor = () => {
-  let red1 = parseInt(getRgbValue(btnRandomColor, 1).split(",")[0]);
-  let green1 = parseInt(getRgbValue(btnRandomColor, 1).split(",")[1]);
-  let blue1 = parseInt(getRgbValue(btnRandomColor, 1).split(",")[2]);
-  let red2 = parseInt(getRgbValue(btnRandomColor, 2).split(",")[0]);
-  let green2 = parseInt(getRgbValue(btnRandomColor, 2).split(",")[1]);
-  let blue2 = parseInt(getRgbValue(btnRandomColor, 2).split(",")[2]);
+getRgbColor = (element = btnRandomColor) => {
+  let red1 = parseInt(getRgbValue(element, 1).split(",")[0]);
+  let green1 = parseInt(getRgbValue(element, 1).split(",")[1]);
+  let blue1 = parseInt(getRgbValue(element, 1).split(",")[2]);
+  let red2 = parseInt(getRgbValue(element, 2).split(",")[0]);
+  let green2 = parseInt(getRgbValue(element, 2).split(",")[1]);
+  let blue2 = parseInt(getRgbValue(element, 2).split(",")[2]);
 
   return [
     `#${rgbToHex(red1)}${rgbToHex(green1)}${rgbToHex(blue1)}`,
@@ -62,9 +66,30 @@ getRgbColor = () => {
   ];
 };
 
-inptColor1.addEventListener("input", setGradient);
-inptColor2.addEventListener("input", setGradient);
+switchColors = () => {
+  // inptColor1.value = getRgbColor(body.style.backgroundColor);
+  const bodyB = body.style.background;
+  console.log(getRgbValue(bodyB));
+};
+
+inptColor1.addEventListener("input", () => setGradient("right"));
+inptColor2.addEventListener("input", () => setGradient("right"));
 setElementBackground(btnRandomColor);
+
+btnToRight.addEventListener("click", () => {
+  setGradient("right");
+  switchColors();
+});
+btnToLeft.addEventListener("click", () => {
+  setGradient("left");
+  switchColors();
+});
+btnToTop.addEventListener("click", () => {
+  setGradient("top");
+});
+btnToDown.addEventListener("click", () => {
+  setGradient("bottom");
+});
 
 btnRandomColor.addEventListener("click", () => {
   body.style.background = `${btnRandomColor.style.background}`;
